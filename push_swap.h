@@ -6,12 +6,17 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 21:07:27 by sonfong           #+#    #+#             */
-/*   Updated: 2026/10/16 21:19:34 by sonfong          ###   ########.fr       */
+/*   Updated: 2026/10/16 21:31:20 by sonfong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef "PUSH_SWAP_H"
 # define "PUSH_SWAP_H"
+
+# include <stdlib.h>
+# include <unistd.h>
+# include "libft/libft.h"
+# include "get_next_line/get_next_line.h"
 
 typedef struct s_node
 {
