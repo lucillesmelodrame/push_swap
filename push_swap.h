@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 21:07:27 by sonfong           #+#    #+#             */
-/*   Updated: 2026/10/16 21:11:53 by sonfong          ###   ########.fr       */
+/*   Updated: 2026/10/16 21:19:34 by sonfong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,17 @@ typedef	struct	s_counters
 	int	rrb;
 	int	rrr;
 }	t_counters;
+
+void	sa(t_stack *a, t_counters *c);
+void	pa(t_stack *a, t_stack *b, t_counters *c);
+void    ss(t_stack *a, t_stack *b, t_counters *c);
+void    pb(t_stack *a, t_stack *b, t_counters *c);
+void    ra(t_stack *a, t_stack *b, t_counters *c);
+void    rb(t_stack *a, t_stack *b, t_counters *c);
+void    rr(t_stack *a, t_stack *b, t_counters *c);
+void    rra(t_stack *a, t_stack *b, t_counters *c);
+void	rrb(t_stack *a, t_stack *b, t_counters *c);
+void    rrr(t_stack *a, t_stack *b, t_counters *c);
+void    pb(t_stack *a, t_stack *b, t_counters *c);
 
 #endif
