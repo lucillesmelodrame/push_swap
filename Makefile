@@ -6,16 +6,11 @@ CC = cc
 
 OBJECTS = $(SRCS:.c=.o)
 
-SRCS = $(GNLSRCS)
-		 # add later
+SRCS = # add later
 
 LIBFTDIR=libft/
 LIBFTA:=libft.a
 LIBFT=$(LIBFTDIR)$(LIBFTA)
-
-GNLDIR=get_next_line/
-GNLSRCS= $(GNLDIR)/get_next_line.c
-		$(GNLDIR)/get_next_line_utils.c
 
 INCLUDE=includes $(LIBFTDIR) .
 
