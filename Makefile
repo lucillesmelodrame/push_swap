@@ -6,7 +6,12 @@ CC = cc
 
 OBJECTS = $(SRCS:.c=.o)
 
-SRCS = # add later
+SRCS = $(STACKDIR)stack_parse.c \
+		$(STACKDIR)stack_llst.c \
+		$(STACKDIR)stack_utils.c \
+		# add more later
+
+STACKDIR=stack/
 
 LIBFTDIR=libft/
 LIBFTA:=libft.a
@@ -16,7 +21,10 @@ INCLUDE=includes $(LIBFTDIR) .
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
+$(LIBFT):
+	make -C $(LIBFTDIR)
+
+$(NAME): $(LIBFT) $(OBJECTS)
 	cp $(LIBFT) $(NAME)
 	ar rcs $(NAME) $(OBJECTS)
 

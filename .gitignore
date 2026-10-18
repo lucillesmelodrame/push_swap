@@ -1,0 +1,8 @@
+# do not commit testing files
+main.c
+test_stack.c
+# do not commit compilation outputs
+a.out
+# do not commit any objs or archives
+**/*.o
+**/*.a
