@@ -6,3 +6,5 @@ a.out
 # do not commit any objs or archives
 **/*.o
 **/*.a
+# i hate .swp files
+**/*.swp
