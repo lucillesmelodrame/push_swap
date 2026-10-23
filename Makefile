@@ -1,43 +1,50 @@
-NAME = push_swap.a
-
-FLAGS = -Wall -Wextra -Werror
+NAME = push_swap
 
 CC = cc
+FLAGS = -Wall -Wextra -Werror
 
-OBJECTS = $(SRCS:.c=.o)
+ODIR = objs/
+OBJS = $(SRCS:$(SRCDIR)%.c=$(ODIR)%.o) \
+		$(ODIR)main.o
 
 SRCS = $(STACKDIR)stack_parse.c \
 		$(STACKDIR)stack_llst.c \
 		$(STACKDIR)stack_utils.c \
+		$(STACKDIR)stack_disorder.c
 		# add more later
 
-STACKDIR=stack/
+HEADER = push_swap.h
 
-LIBFTDIR=libft/
-LIBFTA:=libft.a
-LIBFT=$(LIBFTDIR)$(LIBFTA)
+SRCDIR = src/
+STACKDIR = $(SRCDIR)stack/
 
-INCLUDE=includes $(LIBFTDIR) .
+LIBFTDIR = libft/
+LIBFT = $(LIBFTDIR)libft.a
+INCLUDE = $(LIBFTDIR) .
 
 all: $(NAME)
 
 $(LIBFT):
-	make -C $(LIBFTDIR)
+	$(MAKE) -C $(LIBFTDIR)
 
-$(NAME): $(LIBFT) $(OBJECTS)
-	cp $(LIBFT) $(NAME)
-	ar rcs $(NAME) $(OBJECTS)
+$(NAME): $(LIBFT) $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
-%.o: %.c
+$(ODIR)%.o: $(SRCDIR)%.c $(HEADER)
+	@mkdir -p $(@D)
+	$(CC) $(FLAGS) $(INCLUDE:%=-I%) -c $< -o $@
+
+$(ODIR)%.o: %.c $(HEADER)
+	@mkdir -p $(@D)
 	$(CC) $(FLAGS) $(INCLUDE:%=-I%) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS)
-	make -C $(LIBFTDIR) clean
+	rm -rf $(ODIR)
+	$(MAKE) -C $(LIBFTDIR) clean
 
 fclean: clean
 	rm -f $(NAME)
-	make -C $(LIBFTDIR) fclean
+	$(MAKE) -C $(LIBFTDIR) fclean
 
 re: fclean all
 

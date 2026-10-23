@@ -1,9 +1,11 @@
 # do not commit testing files
 main.c
-test_stack.c
+tests/
 # do not commit compilation outputs
 a.out
+push_swap
 # do not commit any objs or archives
+objs/
 **/*.o
 **/*.a
 # i hate .swp files

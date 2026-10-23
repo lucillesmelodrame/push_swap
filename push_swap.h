@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 21:07:27 by sonfong           #+#    #+#             */
-/*   Updated: 2026/10/19 06:52:51 by sonfong          ###   ########.fr       */
+/*   Updated: 2026/10/24 04:49:47 by sonfong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,5 @@ int		add_bottom(t_stack *stack, int value);
 void	ft_llstclear(t_stack *stack);
 int		build_stack(t_stack *a, char **args);
 void	free_split(char **arr);
+double	compute_disorder(t_stack *a);
 #endif
