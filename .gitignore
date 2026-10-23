@@ -1,5 +1,4 @@
 # do not commit testing files
-main.c
 tests/
 # do not commit compilation outputs
 a.out
