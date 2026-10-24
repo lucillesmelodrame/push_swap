@@ -10,7 +10,9 @@ OBJS = $(SRCS:$(SRCDIR)%.c=$(ODIR)%.o) \
 SRCS = $(STACKDIR)stack_parse.c \
 		$(STACKDIR)stack_llst.c \
 		$(STACKDIR)stack_utils.c \
-		$(STACKDIR)stack_disorder.c
+		$(STACKDIR)stack_disorder.c \
+		$(SRCDIR)flag_checker.c \
+		$(STACKDIR)stack_rank.c
 		# add more later
 
 HEADER = push_swap.h

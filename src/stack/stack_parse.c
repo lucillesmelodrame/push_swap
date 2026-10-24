@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 18:07:41 by sonfong           #+#    #+#             */
-/*   Updated: 2026/10/24 04:00:06 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/10/24 21:55:02 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ static int	add_tokens(t_stack *a, char **tokens)
 int	build_stack(t_stack *a, char **args)
 {
 	char	**tokens;
-	int	i;
-	int	ret;
+	int		i;
+	int		ret;
 
 	i = 0;
 	ret = 0;

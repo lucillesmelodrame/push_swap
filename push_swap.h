@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 21:07:27 by sonfong           #+#    #+#             */
-/*   Updated: 2026/10/24 04:49:47 by sonfong          ###   ########.fr       */
+/*   Updated: 2026/10/24 21:44:27 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,20 @@ typedef struct s_counters
 	int	rrr;
 }	t_counters;
 
+typedef enum e_strategy
+{
+	ADAPTIVE,
+	SIMPLE,
+	MEDIUM,
+	COMPLEX
+}	t_strategy;
+
+typedef struct s_options
+{
+	t_strategy	strategy;
+	int			bench;
+}	t_options;
+
 void	sa(t_stack *a, t_counters *c);
 void	sb(t_stack *b, t_counters *c);
 void	ss(t_stack *a, t_stack *b, t_counters *c);
@@ -67,4 +81,7 @@ void	ft_llstclear(t_stack *stack);
 int		build_stack(t_stack *a, char **args);
 void	free_split(char **arr);
 double	compute_disorder(t_stack *a);
+int		parse_options(char **args, t_options *opt);
+void	assign_ranks(t_stack *a);
+
 #endif

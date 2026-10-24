@@ -1,5 +1,5 @@
 # do not commit testing files
-tests/
+.tests/
 # do not commit compilation outputs
 a.out
 push_swap

@@ -6,11 +6,11 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/24 04:13:53 by sonfong           #+#    #+#             */
-/*   Updated: 2026/10/24 04:30:13 by sonfong          ###   ########.fr       */
+/*   Updated: 2026/10/24 21:39:28 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "push_swap.h"
 
 double	compute_disorder(t_stack *a)
 {
@@ -32,7 +32,7 @@ double	compute_disorder(t_stack *a)
 				mistakes++;
 			y = y->next;
 		}
-	x = x->next;
+		x = x->next;
 	}
 	if (total == 0)
 		return (0);
