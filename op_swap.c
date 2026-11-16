@@ -36,7 +36,7 @@ static void	s_top(t_stack *stack)
 
 void	sa(t_stack *a, t_counters *c)
 {
-	if (!a->top || !a->top->next)
+	if (!a || !a->top || !a->top->next)
 		return ;
 	s_top(a);
 	if (c)
@@ -50,7 +50,7 @@ void	sa(t_stack *a, t_counters *c)
 
 void	sb(t_stack *b, t_counters *c)
 {
-	if (!b->top || !b->top->next)
+	if (!b ||!b->top || !b->top->next)
 		return ;
 	s_top(b);
 	if (c)
@@ -76,7 +76,7 @@ void	ss(t_stack *a, t_stack *b, t_counters *c)
 		s_top(b);
 		run += 1;
 	}
-	if (c && run > 0)
+	if (c && run == 2)
 	{
 		c->ss++;
 		write(1, "ss\n", 3);
