@@ -9,3 +9,5 @@ objs/
 **/*.a
 # i hate .swp files
 **/*.swp
+# not committing sort_small any longer, but still have it jic
+**/sort_small.c
