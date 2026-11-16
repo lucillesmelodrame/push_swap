@@ -34,34 +34,34 @@ static void	s_top(t_stack *stack)
 //swap the 2 node by changing the prev and next node
 //last change the pointer of the stack to the current top node
 
-void	sa(t_stack *a, t_counters *counters)
+void	sa(t_stack *a, t_counters *c)
 {
 	if (!a->top || !a->top->next)
 		return ;
 	s_top(a);
-	if (counters)
+	if (c)
 	{
-		counters->sa++;
+		c->sa++;
 		write(1, "sa\n", 3);
 	}
 }
 //swap stack a top 2
 //should we add a print check?
 
-void	sb(t_stack *b, t_counters *counters)
+void	sb(t_stack *b, t_counters *c)
 {
 	if (!b->top || !b->top->next)
 		return ;
 	s_top(b);
-	if (counters)
+	if (c)
 	{
-		counters->sb++;
+		c->sb++;
 		write(1, "sb\n", 3);
 	}
 }
 //swap stack b top 2
 
-void	ss(t_stack *a, t_stack *b, t_counters *counters)
+void	ss(t_stack *a, t_stack *b, t_counters *c)
 {
 	int	run;
 
@@ -76,9 +76,9 @@ void	ss(t_stack *a, t_stack *b, t_counters *counters)
 		s_top(b);
 		run += 1;
 	}
-	if (counters && run > 0)
+	if (c && run > 0)
 	{
-		counters->ss++;
+		c->ss++;
 		write(1, "ss\n", 3);
 	}
 	else
