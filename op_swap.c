@@ -6,7 +6,7 @@
 /*   By: xinchong <xinchong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:54:09 by xinchong          #+#    #+#             */
-/*   Updated: 2026/11/16 13:10:58 by xinchong         ###   ########.fr       */
+/*   Updated: 2026/11/16 13:27:36 by xinchong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	s_top(t_stack *stack)
 	t_node	*temp;
 
 	if (stack->size < 2)
-		return (0);
+		return ;
 	first = stack->top;
 	second = first->next;
 	temp = second->next;
@@ -37,7 +37,7 @@ static void	s_top(t_stack *stack)
 void	sa(t_stack *a, t_counters *counters)
 {
 	if (!a->top || !a->top->next)
-		return (0);
+		return ;
 	s_top(a);
 	if (counters)
 	{
@@ -51,10 +51,37 @@ void	sa(t_stack *a, t_counters *counters)
 void	sb(t_stack *b, t_counters *counters)
 {
 	if (!b->top || !b->top->next)
-		return (0);
+		return ;
 	s_top(b);
 	if (counters)
+	{
 		counters->sb++;
-	write(1, "sb\n", 3);
+		write(1, "sb\n", 3);
+	}
 }
 //swap stack b top 2
+
+void	ss(t_stack *a, t_stack *b, t_counters *counters)
+{
+	int	run;
+
+	run = 0;
+	if (a->top && a->top->next)
+	{
+		s_top(a);
+		run += 1;
+	}
+	if (b->top && b->top->next)
+	{
+		s_top(b);
+		run += 1;
+	}
+	if (counters && run > 0)
+	{
+		counters->ss++;
+		write(1, "ss\n", 3);
+	}
+	else
+		return ;
+}
+//swap both stack a and b top 2
