@@ -10,45 +10,63 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 t_node *find_max(t_stack *stack)
 {
-    t_node *max_node;
-    t_node *current;
+    t_node *max;
+    t_node *i;
 
     if (!stack)
         return NULL;
-    current = stack->top;
-    max_node = current;
-    while (current)
+    i = stack->top;
+    max = i;
+    while (i)
     {
-        if (current->value > max_node->value)
-            max_node = current;
-        current = current->next;
+        if (i->value > max->value)
+            max = i;
+        i = i->next;
     }
-    return max_node;
+    return &(max->value);
 }
 
-t_node *find_min(t_stack *stack)
+int *find_min(t_stack *stack)
 {
-    t_node *min_node;
-    t_node *current;
+    t_node *min;
+    t_node *i;
 
     if (!stack)
         return NULL;
-    current = stack->top;
-    min_node = current;
-    while (current)
+    i = stack->top;
+    min = i;
+    while (i)
     {
-        if (current->value < min_node->value)
-            min_node = current;
-        current = current->next;
+        if (i->value < min->value)
+            min = i;
+        i = i->next;
     }
-    return min_node;
+    return &(min->value);
 }
 
-void    push_rank_to_b(t_stack *a, t_stack *b, int rank, t_counters *c)
+void    move_top(t_stack *a, int p, int size, t_counters *c)
 {
-    
+    int i;
+
+    i = 0;
+    if (p <= size / 2)
+    {
+        while (i < p)
+        {
+            ra(a, c);
+            i++;
+        }  
+    }
+    else
+    {
+        while (i < size - p)
+        {
+            rra(a, c);
+            i++;
+        }
+    }
 }
