@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 21:07:27 by sonfong           #+#    #+#             */
-/*   Updated: 2026/10/24 21:44:27 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/18 20:35:23 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,7 @@ void	free_split(char **arr);
 double	compute_disorder(t_stack *a);
 int		parse_options(char **args, t_options *opt);
 void	assign_ranks(t_stack *a);
+t_node *find_min(t_stack *stack);
+void 	move_top(t_stack *a, int p, int size, t_counters *c);
 
 #endif
