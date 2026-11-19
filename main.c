@@ -6,20 +6,20 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/24 05:03:30 by sonfong           #+#    #+#             */
-/*   Updated: 2026/11/19 17:29:48 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/19 17:54:12 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_stack(t_stack *s)
+static void	init_stack(t_stack *s)
 {
 	s->top = NULL;
 	s->bottom = NULL;
 	s->size = 0;
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack		a;
 	t_stack		b;
@@ -27,7 +27,6 @@ int		main(int argc, char **argv)
 	t_options	opt;
 	int			used;
 
-	used = 0;
 	if (argc <= 1)
 		return (0);
 	init_stack(&a);
@@ -44,5 +43,6 @@ int		main(int argc, char **argv)
 	if (opt.strategy == SIMPLE)
 		simple_algo(&a, &b, &c);
 	ft_llstclear(&a);
+	ft_llstclear(&b);
 	return (0);
 }
