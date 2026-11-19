@@ -6,7 +6,7 @@
 /*   By: xinchong <xinchong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 17:31:26 by xinchong          #+#    #+#             */
-/*   Updated: 2026/11/18 21:48:49 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/19 16:42:42 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_node *find_max(t_stack *stack)
     if (!stack || !stack->top)
         return (NULL);
     current = stack->top;
-    min = current;
+    max = current;
     while (current)
     {
         if (current->rank > max->rank)

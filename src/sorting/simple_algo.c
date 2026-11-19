@@ -6,7 +6,7 @@
 /*   By: xinchong <xinchong@student.42kl.edu>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 19:46:30 by xinchong          #+#    #+#             */
-/*   Updated: 2026/11/19 15:49:56 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/19 16:47:12 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ void simple_algo(t_stack *a, t_stack *b, t_counters *c)
 {
 	t_node	*min;
     int size;
-    int p;
+    int position;
 
+	if (!a || !b || a->size < 2)
+		return ;
     size = a->size;
     while (size > 0)
   {

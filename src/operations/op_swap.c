@@ -6,7 +6,7 @@
 /*   By: xinchong <xinchong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:54:09 by xinchong          #+#    #+#             */
-/*   Updated: 2026/11/19 15:59:57 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/19 16:44:09 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ss(t_stack *a, t_stack *b, t_counters *c)
 		s_top(a);
 		run += 1;
 	}
-	if (a && b->top && b->top->next)
+	if (b && b->top && b->top->next)
 	{
 		s_top(b);
 		run += 1;
