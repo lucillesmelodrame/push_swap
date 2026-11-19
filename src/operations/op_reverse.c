@@ -6,7 +6,7 @@
 /*   By: xinchong <xinchong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 14:18:21 by xinchong          #+#    #+#             */
-/*   Updated: 2026/11/16 15:36:43 by xinchong         ###   ########.fr       */
+/*   Updated: 2026/11/19 16:18:51 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	rrr(t_stack *a, t_stack *b, t_counters *c)
 		reverse(b);
 		run += 1;
 	}
-	if (c && run == 2)
+	if (c && run > 0)
 	{
 		c->rrr++;
 		write(1, "rrr\n", 4);
