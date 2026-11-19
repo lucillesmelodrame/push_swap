@@ -12,13 +12,21 @@ SRCS = $(STACKDIR)stack_parse.c \
 		$(STACKDIR)stack_utils.c \
 		$(STACKDIR)stack_disorder.c \
 		$(SRCDIR)flag_checker.c \
-		$(STACKDIR)stack_rank.c
+		$(STACKDIR)stack_rank.c \
+		$(SORTDIR)simple_algo.c \
+		$(SORTDIR)sort_utils.c \
+		$(OPDIR)op_push.c \
+		$(OPDIR)op_reverse.c \
+		$(OPDIR)op_rotate.c \
+		$(OPDIR)op_swap.c
 		# add more later
 
 HEADER = push_swap.h
 
 SRCDIR = src/
 STACKDIR = $(SRCDIR)stack/
+SORTDIR = $(SRCDIR)sorting/
+OPDIR = $(SRCDIR)operations/
 
 LIBFTDIR = libft/
 LIBFT = $(LIBFTDIR)libft.a
