@@ -6,7 +6,7 @@
 /*   By: xinchong <xinchong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 14:16:35 by xinchong          #+#    #+#             */
-/*   Updated: 2026/11/16 15:28:46 by xinchong         ###   ########.fr       */
+/*   Updated: 2026/11/19 16:02:05 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	rr(t_stack *a, t_stack *b, t_counters *c)
 		rotate(b);
 		run += 1;
 	}
-	if (c && run == 2)
+	if (c && run > 0)
 	{
 		c->rr++;
 		write(1, "rr\n", 3);
