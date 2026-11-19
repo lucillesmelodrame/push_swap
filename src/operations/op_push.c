@@ -6,7 +6,7 @@
 /*   By: xinchong <xinchong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 13:28:35 by xinchong          #+#    #+#             */
-/*   Updated: 2026/11/16 15:18:02 by xinchong         ###   ########.fr       */
+/*   Updated: 2026/11/19 15:54:15 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,25 @@
 static void	p_top(t_stack *from, t_stack *to)
 {
 	t_node	*node;
-	t_node	*new_from_top;
-	t_node	*old_to_top;
 
 	node = from->top;
-	new_from_top = node->next;
-	if (new_from_top != NULL)
-		new_from_top->prev = NULL;
-	from->top = new_from_top;
-	old_to_top = to->top;
-	if (old_to_top != NULL)
-		old_to_top->prev = node;
-	node->next = old_to_top;
+	//remove node from source stack
+	from->top = node->next;
+	if (from->top)
+		from->top->prev = NULL;
+	else
+		from->bottom = NULL;
+	from->size--;
+	//prepare node for dest stack
+	node->prev = NULL;
+	node->next = to->top;
+	//insert node at dest top
+	if (to->top)
+		to->top->prev = node;
+	else
+		to->bottom = node;
 	to->top = node;
+	to->size++;
 }
 //push the top node from stack 'from' to stack 'to'
 
