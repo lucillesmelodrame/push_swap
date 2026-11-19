@@ -6,7 +6,7 @@
 /*   By: xinchong <xinchong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:54:09 by xinchong          #+#    #+#             */
-/*   Updated: 2026/11/16 13:27:36 by xinchong         ###   ########.fr       */
+/*   Updated: 2026/11/19 15:59:57 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,19 @@ static void	s_top(t_stack *stack)
 	t_node	*second;
 	t_node	*temp;
 
-	if (stack->size < 2)
+	if (!stack || stack->size < 2)
 		return ;
 	first = stack->top;
 	second = first->next;
 	temp = second->next;
-	first->next = temp;
-	first->prev = second;
-	second->next = first;
 	second->prev = NULL;
-	if (temp != NULL)
+	second->next = first;
+	first->prev = second;
+	first->next = temp;
+	if (temp)
 		temp->prev = first;
+	else
+		stack->bottom = first;
 	stack->top = second;
 }
 //swap the 2 node by changing the prev and next node
@@ -66,22 +68,20 @@ void	ss(t_stack *a, t_stack *b, t_counters *c)
 	int	run;
 
 	run = 0;
-	if (a->top && a->top->next)
+	if (a && a->top && a->top->next)
 	{
 		s_top(a);
 		run += 1;
 	}
-	if (b->top && b->top->next)
+	if (a && b->top && b->top->next)
 	{
 		s_top(b);
 		run += 1;
 	}
-	if (c && run == 2)
+	if (c && run > 0)
 	{
 		c->ss++;
 		write(1, "ss\n", 3);
 	}
-	else
-		return ;
 }
 //swap both stack a and b top 2
