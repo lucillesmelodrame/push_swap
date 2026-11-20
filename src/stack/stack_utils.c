@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:10:03 by sonfong           #+#    #+#             */
-/*   Updated: 2026/10/24 04:00:13 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/20 00:48:30 by sonfong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,18 @@ void	free_split(char **arr)
 	while (arr[i])
 		free(arr[i++]);
 	free(arr);
+}
+
+int	is_sorted(t_stack *a)
+{
+	t_node	*cur;
+
+	cur = a->top;
+	while (cur && cur->next)
+	{
+		if (cur->value > cur->next->value)
+			return (0);
+		cur = cur->next;
+	}
+	return (1);
 }
