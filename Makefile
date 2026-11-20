@@ -15,6 +15,8 @@ SRCS = $(STACKDIR)stack_parse.c \
 		$(STACKDIR)stack_rank.c \
 		$(SORTDIR)simple_algo.c \
 		$(SORTDIR)sort_utils.c \
+		$(SORTDIR)complex_algo.c \
+		$(SORTDIR)sort_dispatch.c \
 		$(OPDIR)op_push.c \
 		$(OPDIR)op_reverse.c \
 		$(OPDIR)op_rotate.c \
