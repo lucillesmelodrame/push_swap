@@ -11,6 +11,8 @@ objs/
 **/*.swp
 # not committing sort_small any longer, but still have it jic
 **/sort_small.c
+# checkers, testers, visualisers
 checker_linux
 **/*.txt
 output
+push_swap_visualizer/
