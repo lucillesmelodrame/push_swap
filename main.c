@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/24 05:03:30 by sonfong           #+#    #+#             */
-/*   Updated: 2026/11/19 17:54:12 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/20 00:43:45 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ int	main(int argc, char **argv)
 	init_stack(&b);
 	ft_bzero(&c, sizeof(c));
 	assign_ranks(&a);
-	if (opt.strategy == SIMPLE)
-		simple_algo(&a, &b, &c);
+	run_sort(&opt, &a, &b, &c);
 	ft_llstclear(&a);
 	ft_llstclear(&b);
 	return (0);
