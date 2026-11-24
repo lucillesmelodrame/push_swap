@@ -26,7 +26,7 @@ void	run_sort(t_options *opt, t_stack *a, t_stack *b, t_counters *c)
 		complex_sort(a, b, c);
 	else if (opt->strategy == ADAPTIVE)
 		// adaptive selector, but radix for now so still works
-	
+		adaptive_sort(a, b, c);
 }
 
 static void	adaptive_sort(t_stack *a, t_stack *b, t_counters *c)
