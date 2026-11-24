@@ -10,7 +10,7 @@ objs/
 # i hate .swp files
 **/*.swp
 # not committing sort_small any longer, but still have it jic
-**/sort_small.c
+**/*sort_small.c
 # checkers, testers, visualisers
 checker_linux
 **/*.txt
