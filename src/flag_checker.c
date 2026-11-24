@@ -36,7 +36,7 @@ int	parse_options(char **args, t_options *opt)
 			opt->strategy = COMPLEX;
 		else if (is_flag(args[i], "--adaptive"))
 			opt->strategy = ADAPTIVE;
-		else if (is_flag(args[i], "--bench"))
+		if (is_flag(args[i], "--bench"))
 			opt->bench = 1;
 		else
 			return (i);
