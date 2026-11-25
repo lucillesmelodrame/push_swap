@@ -12,12 +12,15 @@ SRCS = $(STACKDIR)stack_parse.c \
 		$(STACKDIR)stack_utils.c \
 		$(STACKDIR)stack_disorder.c \
 		$(SRCDIR)flag_checker.c \
+		$(SRCDIR)bench.c \
+		$(SRCDIR)bench_utils.c \
 		$(STACKDIR)stack_rank.c \
 		$(SORTDIR)simple_algo.c \
 		$(SORTDIR)sort_utils.c \
 		$(SORTDIR)medium_algo.c \
 		$(SORTDIR)complex_algo.c \
 		$(SORTDIR)sort_dispatch.c \
+		$(SORTDIR)sort_small.c \
 		$(OPDIR)op_push.c \
 		$(OPDIR)op_reverse.c \
 		$(OPDIR)op_rotate.c \

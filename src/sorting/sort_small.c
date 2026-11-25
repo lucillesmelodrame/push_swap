@@ -6,13 +6,13 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 16:01:40 by sonfong           #+#    #+#             */
-/*   Updated: 2026/11/25 09:08:20 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/25 13:22:13 by sonfong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_stack *a, t_counters *c)
+static void	sort_three(t_stack *a, t_counters *c)
 {
 	t_node	*current;
 	t_node	*max;

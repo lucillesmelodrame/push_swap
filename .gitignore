@@ -16,3 +16,5 @@ checker_linux
 **/*.txt
 output
 push_swap_visualizer/
+push_swap_tester*/
+tester_push_swap/

@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 21:07:27 by sonfong           #+#    #+#             */
-/*   Updated: 2026/11/25 11:50:37 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/25 13:21:52 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,15 @@ int		find_position(t_stack *stack, t_node *node);
 void	move_top(t_stack *a, int p, int size, t_counters *c);
 void	simple_algo(t_stack *a, t_stack *b, t_counters *c);
 void	radix_sort(t_stack *a, t_stack *b, t_counters *c);
-void    run_sort(t_options *opt, t_stack *a, t_stack *b, t_counters *c);
 int		is_sorted(t_stack *a);
 void	medium_sort(t_stack *a, t_stack *b, t_counters *c);
-void	sort_three(t_stack *a, t_counters *c);
+void	sort_small(t_stack *a, t_stack *b, t_counters *c);
+t_strategy	run_sort(t_options *opt, t_stack *a, t_stack *b,
+		t_counters *c);
+void		put_percent(double d);
+int			count_operations(t_counters *c);
+void		print_counters(t_counters *c);
+void		print_bench(t_strategy strategy, t_strategy selected,
+				double disorder, t_counters *c);
 
 #endif
