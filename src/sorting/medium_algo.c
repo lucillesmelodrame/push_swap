@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 04:55:52 by sonfong           #+#    #+#             */
-/*   Updated: 2026/11/24 15:47:50 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/25 14:21:41 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	int_sqrt(int n)
 	int	i;
 
 	i = 0;
-	while ((long)(i + 1) * (i + 1) <= n)
+	while ((long)(i + 1)*(i + 1) <= n)
 		i++;
 	return (i);
 }

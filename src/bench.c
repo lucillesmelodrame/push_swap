@@ -39,16 +39,14 @@ static void	print_strategy(t_strategy strategy, t_strategy selected)
 	ft_putchar_fd('\n', 2);
 }
 
-void	print_bench(t_strategy strategy, t_strategy selected,
-		double disorder, t_counters *c)
+void	print_bench(t_options *opt, t_counters *c)
 {
 	ft_putstr_fd("[bench] disorder: ", 2);
-	put_percent(disorder);
+	put_percent(opt->disorder);
 	ft_putchar_fd('\n', 2);
-	print_strategy(strategy, selected);
+	print_strategy(opt->strategy, opt->selected);
 	ft_putstr_fd("[bench] total_ops: ", 2);
 	ft_putnbr_fd(count_operations(c), 2);
 	ft_putchar_fd('\n', 2);
 	print_counters(c);
 }
-

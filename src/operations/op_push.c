@@ -17,17 +17,14 @@ static void	p_top(t_stack *from, t_stack *to)
 	t_node	*node;
 
 	node = from->top;
-	//remove node from source stack
 	from->top = node->next;
 	if (from->top)
 		from->top->prev = NULL;
 	else
 		from->bottom = NULL;
 	from->size--;
-	//prepare node for dest stack
 	node->prev = NULL;
 	node->next = to->top;
-	//insert node at dest top
 	if (to->top)
 		to->top->prev = node;
 	else

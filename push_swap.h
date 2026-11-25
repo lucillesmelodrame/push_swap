@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "libft/libft.h"
-# include "ft_printf/ft_printf.h"
 
 typedef struct s_node
 {
@@ -60,6 +59,7 @@ typedef enum e_strategy
 typedef struct s_options
 {
 	t_strategy	strategy;
+	t_strategy	selected;
 	int			bench;
 	double		disorder;
 }	t_options;
@@ -94,12 +94,10 @@ void	radix_sort(t_stack *a, t_stack *b, t_counters *c);
 int		is_sorted(t_stack *a);
 void	medium_sort(t_stack *a, t_stack *b, t_counters *c);
 void	sort_small(t_stack *a, t_stack *b, t_counters *c);
-t_strategy	run_sort(t_options *opt, t_stack *a, t_stack *b,
-		t_counters *c);
-void		put_percent(double d);
-int			count_operations(t_counters *c);
-void		print_counters(t_counters *c);
-void		print_bench(t_strategy strategy, t_strategy selected,
-				double disorder, t_counters *c);
+void	run_sort(t_options *opt, t_stack *a, t_stack *b, t_counters *c);
+void	put_percent(double d);
+int		count_operations(t_counters *c);
+void	print_counters(t_counters *c);
+void	print_bench(t_options *opt, t_counters *c);
 
 #endif

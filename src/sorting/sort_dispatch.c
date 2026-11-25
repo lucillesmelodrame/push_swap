@@ -12,22 +12,20 @@
 
 #include "../../push_swap.h"
 
-static t_strategy	adaptive_sort(t_stack *a, t_stack *b, t_counters *c)
+static t_strategy	adaptive_sort(t_options *opt, t_stack *a, t_stack *b,
+		t_counters *c)
 {
-	double	disorder;
-
-	disorder = compute_disorder(a);
 	if (a->size < 6)
 	{
 		sort_small(a, b, c);
 		return (SIMPLE);
 	}
-	else if (disorder < 0.2)
+	if (opt->disorder < 0.2)
 	{
 		simple_algo(a, b, c);
 		return (SIMPLE);
 	}
-	else if (disorder < 0.5)
+	if (opt->disorder < 0.5)
 	{
 		medium_sort(a, b, c);
 		return (MEDIUM);
@@ -36,21 +34,19 @@ static t_strategy	adaptive_sort(t_stack *a, t_stack *b, t_counters *c)
 	return (COMPLEX);
 }
 
-t_strategy	run_sort(t_options *opt, t_stack *a, t_stack *b,
-		t_counters *c)
+void	run_sort(t_options *opt, t_stack *a, t_stack *b, t_counters *c)
 {
-	t_strategy	selected;
-
-	selected = opt->strategy;
+	opt->selected = opt->strategy;
+	if (opt->strategy == ADAPTIVE)
+		opt->selected = SIMPLE;
 	if (is_sorted(a))
-		return (selected);
-	if (selected == ADAPTIVE)
-		selected = adaptive_sort(a, b, c);
-	else if (selected == SIMPLE)
+		return ;
+	if (opt->strategy == ADAPTIVE)
+		opt->selected = adaptive_sort(opt, a, b, c);
+	else if (opt->strategy == SIMPLE)
 		simple_algo(a, b, c);
-	else if (selected == MEDIUM)
+	else if (opt->strategy == MEDIUM)
 		medium_sort(a, b, c);
-	else if (selected == COMPLEX)
+	else
 		radix_sort(a, b, c);
-	return (selected);
 }

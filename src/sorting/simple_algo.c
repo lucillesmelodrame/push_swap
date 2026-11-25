@@ -12,24 +12,24 @@
 
 #include "../../push_swap.h"
 
-//selection sort
-void simple_algo(t_stack *a, t_stack *b, t_counters *c)
+//selection sort: push the smallest to b each time, then push everything back
+void	simple_algo(t_stack *a, t_stack *b, t_counters *c)
 {
 	t_node	*min;
-    int size;
-    int position;
+	int		size;
+	int		position;
 
 	if (!a || !b || a->size < 2)
 		return ;
-    size = a->size;
-    while (size > 0)
-  {
-        min = find_min(a);
+	size = a->size;
+	while (size > 0)
+	{
+		min = find_min(a);
 		position = find_position(a, min);
-        move_top(a, position, size, c);
-        pb(a, b, c);
-        size--;
-    }//finding the min and move top of stack a push it
-    while (b->size > 0)
-        pa(a, b, c);
-}//push back all to a
+		move_top(a, position, size, c);
+		pb(a, b, c);
+		size--;
+	}
+	while (b->size > 0)
+		pa(a, b, c);
+}
