@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:10:03 by sonfong           #+#    #+#             */
-/*   Updated: 2026/11/20 00:48:30 by sonfong          ###   ########.fr       */
+/*   Updated: 2026/11/25 15:16:36 by sonfong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	add_bottom(t_stack *stack, int value)
 
 	new = ft_calloc(1, sizeof(t_node));
 	if (!new)
-		return (1);
+		return (0);
 	new->value = value;
 	if (!stack->bottom)
 	{
@@ -32,7 +32,7 @@ int	add_bottom(t_stack *stack, int value)
 		stack->bottom = new;
 	}
 	stack->size++;
-	return (0);
+	return (1);
 }
 
 void	free_split(char **arr)

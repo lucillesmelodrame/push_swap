@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 18:07:41 by sonfong           #+#    #+#             */
-/*   Updated: 2026/10/24 21:55:02 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/25 15:15:15 by sonfong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,17 @@ int	is_valid_int(char *str, int *out)
 		i++;
 	}
 	if (!ft_isdigit(str[i]))
-		return (1);
+		return (0);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + (str[i++] - '0');
 		if (res * sign < INT_MIN || res * sign > INT_MAX)
-			return (1);
+			return (0);
 	}
 	if (str[i])
-		return (1);
+		return (0);
 	*out = (int)(res * sign);
-	return (0);
+	return (1);
 }
 
 int	has_duplicates(t_stack *stack)
@@ -69,16 +69,16 @@ static int	add_tokens(t_stack *a, char **tokens)
 	i = 0;
 	num = 0;
 	if (!tokens || !tokens[0])
-		return (1);
+		return (0);
 	while (tokens[i])
 	{
-		if (is_valid_int(tokens[i], &num))
-			return (1);
-		if (add_bottom(a, num))
-			return (1);
+		if (!is_valid_int(tokens[i], &num))
+			return (0);
+		if (!add_bottom(a, num))
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int	build_stack(t_stack *a, char **args)
@@ -94,11 +94,11 @@ int	build_stack(t_stack *a, char **args)
 		tokens = ft_split(args[i], ' ');
 		ret = add_tokens(a, tokens);
 		free_split(tokens);
-		if (ret)
-			return (1);
+		if (!ret)
+			return (0);
 		i++;
 	}
 	if (has_duplicates(a))
-		return (1);
-	return (0);
+		return (0);
+	return (1);
 }

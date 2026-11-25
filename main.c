@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/24 05:03:30 by sonfong           #+#    #+#             */
-/*   Updated: 2026/11/25 13:20:08 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/25 15:17:33 by sonfong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 		return (0);
 	init_stack(&a);
 	used = parse_options(argv + 1, &opt);
-	if (build_stack(&a, (argv + 1 + used)))
+	if (!build_stack(&a, (argv + 1 + used)))
 		return (error_exit(&a));
 	if (!a.size)
 		return (0);
