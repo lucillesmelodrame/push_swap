@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/24 16:22:23 by sonfong           #+#    #+#             */
-/*   Updated: 2026/10/24 21:54:30 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/24 19:46:34 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	parse_options(char **args, t_options *opt)
 			opt->strategy = COMPLEX;
 		else if (is_flag(args[i], "--adaptive"))
 			opt->strategy = ADAPTIVE;
-		if (is_flag(args[i], "--bench"))
+		else if (is_flag(args[i], "--bench"))
 			opt->bench = 1;
 		else
 			return (i);

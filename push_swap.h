@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 21:07:27 by sonfong           #+#    #+#             */
-/*   Updated: 2026/11/24 15:37:31 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/25 11:50:37 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ typedef struct s_options
 {
 	t_strategy	strategy;
 	int			bench;
+	double		disorder;
 }	t_options;
 
 void	sa(t_stack *a, t_counters *c);
@@ -92,5 +93,6 @@ void	radix_sort(t_stack *a, t_stack *b, t_counters *c);
 void    run_sort(t_options *opt, t_stack *a, t_stack *b, t_counters *c);
 int		is_sorted(t_stack *a);
 void	medium_sort(t_stack *a, t_stack *b, t_counters *c);
+void	sort_three(t_stack *a, t_counters *c);
 
 #endif

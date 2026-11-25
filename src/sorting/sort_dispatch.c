@@ -6,7 +6,7 @@
 /*   By: sonfong <sonfong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 00:44:08 by sonfong           #+#    #+#             */
-/*   Updated: 2026/11/24 15:38:30 by melodrame        ###   ########.fr       */
+/*   Updated: 2026/11/25 11:19:14 by melodrame        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,24 @@ void	run_sort(t_options *opt, t_stack *a, t_stack *b, t_counters *c)
 	else if (opt->strategy == MEDIUM)
 		medium_sort(a, b, c);
 	else if (opt->strategy == COMPLEX)
-		complex_sort(a, b, c);
+		radix_sort(a, b, c);
 	else if (opt->strategy == ADAPTIVE)
-		// adaptive selector, but radix for now so still works
+		adaptuve_sort(a, b, c);
 	
 }
 
 static void	adaptive_sort(t_stack *a, t_stack *b, t_counters *c)
 {
-	int	size;
+	int		size;
 	double	disorder;
 
-	size = ft_llstsize(a->top);
 	disorder = compute_disorder(a);
-	if (disorder < 0.2 || size < 6)
-		simple_algo(a,b,c);
-	else if (disorder >= 0.2 & disorder < 0.5 )
-		radix_sort(a, b, c);
+	if (a->size < 6)
+		sort_small(a, b, c);
+	else if (disorder < 0.2)
+		simple_algo(a, b, c);
+	else if (disorder >= 0.2 && disorder < 0.5 )
+		medium_algo(a, b, c);
 	else
-		complex_sort(a, b, c);
+		radix_sort(a, b, c);
 }
-
